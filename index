@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的主页</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover; color: #fff;
+        }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1; }
+        .content { position: relative; z-index: 2; text-align: center; padding: 20px; }
+        h1 { font-size: 3rem; margin-bottom: 40px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        
+        .btn-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        
+        /* 按钮通用样式 */
+.btn {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #fff;
+    
+    /* 通用底图设置 */
+    background-size: cover;
+    background-position: center;
+    
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* ⭐ 四个按钮分别引用不同图片 */
+.btn-about      { background-image: url('btn-about.jpg'); }
+.btn-portfolio  { background-image: url('btn-portfolio.jpg'); }
+.btn-blog       { background-image: url('btn-blog.jpg'); }
+.btn-contact    { background-image: url('btn-contact.jpg'); }
+
+/* 悬停效果 */
+.btn:hover {
+    filter: brightness(1.2);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    border-color: #fff;
+}
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>太空杀124改版内容</h1>
+        <div class="btn-container">
+            <a href="https://3g.7723.cn/ups/2290041" class="btn">军事</a>
+            <a href="https://3g.7723.cn/ups/2312994" class="btn">整合</a>
+            <a href="https://3g.7723.cn/ups/2262828" class="btn">普通</a>
+            <a href="https://3g.7723.cn/ups/2297704" class="btn">微调</a>
+        </div>
+    </div>
+</body>
+</html>
