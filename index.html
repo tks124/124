@@ -9,57 +9,99 @@
         body {
             font-family: 'Segoe UI', sans-serif;
             height: 100vh;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             background: url('background.jpg') no-repeat center center fixed;
-            background-size: cover; color: #fff;
+            background-size: cover;
+            color: #fff;
         }
-        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1; }
-        .content { position: relative; z-index: 2; text-align: center; padding: 20px; }
-        h1 { font-size: 3rem; margin-bottom: 40px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        
-        .btn-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-        
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .btn-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px; /* 两组按钮之间的间距 */
+        }
         /* 按钮通用样式 */
-.btn {
-    padding: 15px 35px;
-    font-size: 1.1rem;
-    text-decoration: none;
-    color: #fff;
-    
-    /* 通用底图设置 */
-    background-size: cover;
-    background-position: center;
-    
-    border: 2px solid rgba(255,255,255,0.5);
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
+        .btn {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: #fff;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            background-color: rgba(255,255,255,0.1); /* 增加一点底色防止图片加载慢 */
+        }
+        /* 原有的四个按钮图片 (如果不需要图片背景，可以保留上面的 background-color) */
+        .btn-about { background-image: url('btn-about.jpg'); }
+        .btn-portfolio { background-image: url('btn-portfolio.jpg'); }
+        .btn-blog { background-image: url('btn-blog.jpg'); }
+        .btn-contact { background-image: url('btn-contact.jpg'); }
+        
+        /* 新增按钮的特定样式（可选，为了区分） */
+        .btn-new {
+            background-color: rgba(255, 255, 255, 0.2); /* 稍微亮一点的底色 */
+            background-image: none; /* 新按钮暂时不用背景图，保持清爽 */
+        }
 
-/* ⭐ 四个按钮分别引用不同图片 */
-.btn-about      { background-image: url('btn-about.jpg'); }
-.btn-portfolio  { background-image: url('btn-portfolio.jpg'); }
-.btn-blog       { background-image: url('btn-blog.jpg'); }
-.btn-contact    { background-image: url('btn-contact.jpg'); }
-
-/* 悬停效果 */
-.btn:hover {
-    filter: brightness(1.2);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    border-color: #fff;
-}
+        /* 悬停效果 */
+        .btn:hover {
+            filter: brightness(1.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border-color: #fff;
+        }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
     <div class="content">
         <h1>太空杀124改版内容</h1>
+        
+        <!-- 第一组：原有的四个按钮 -->
         <div class="btn-container">
-            <a href="https://3g.7723.cn/ups/2290041" class="btn">军事</a>
-            <a href="https://3g.7723.cn/ups/2312994" class="btn">整合</a>
-            <a href="https://3g.7723.cn/ups/2262828" class="btn">普通</a>
-            <a href="https://3g.7723.cn/ups/2297704" class="btn">微调</a>
+            <a href="https://3g.7723.cn/ups/2290041" class="btn btn-about">军事</a>
+            <a href="https://3g.7723.cn/ups/2312994" class="btn btn-portfolio">整合</a>
+            <a href="https://3g.7723.cn/ups/2262828" class="btn btn-blog">普通</a>
+            <a href="https://3g.7723.cn/ups/2297704" class="btn btn-contact">微调</a>
+        </div>
+
+        <!-- 第二组：新增的三个按钮 -->
+        <div class="btn-container">
+            <!-- 反馈按钮：请替换 href 中的 # 为你的链接 -->
+            <a href="https://mail.qq.com/cgi-bin/mailto?to=kefutks124@foxmail.com&subject=游戏%20反馈&body=您好，%0D%0A我想反馈一下游戏的一些东西或添加游戏一些东西" class="btn btn-new">反馈按钮</a>
+            
+            <!-- 更新日志：指向新创建的 changelog.html -->
+            <a href="https://tks124.github.io/tks123/" class="btn btn-new">更新日志</a>
+            
+            <!-- 个人主页：请替换 href 中的 # 为你的链接 -->
+            <a href="【太空杀124的个人空间-哔哩哔哩】 https://b23.tv/A4FGJGl" class="btn btn-new">biibii个人主页</a>
         </div>
     </div>
 </body>
